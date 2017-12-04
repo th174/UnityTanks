@@ -193,6 +193,9 @@ GameObject:
   - component: {fileID: 54576398065755416}
   - component: {fileID: 114114233458166596}
   - component: {fileID: 114680061187456028}
+  - component: {fileID: 114323664214864962}
+  - component: {fileID: 114259754074973954}
+  - component: {fileID: 114882966602038074}
   m_Layer: 0
   m_Name: Tank shell
   m_TagString: Untagged
@@ -497,7 +500,7 @@ Rigidbody:
   m_GameObject: {fileID: 1712977108545004}
   serializedVersion: 2
   m_Mass: 8
-  m_Drag: 0.1
+  m_Drag: 0.15
   m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -561,12 +564,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18309d58331ab84d8b43297f40d4a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 6
   muzzleForce: 150000
-  baseDamage: 100
+  baseDamage: 150
   smokeEffect: {fileID: 198191085325983932}
   explosionEffect: {fileID: 198915309884202008}
   muzzleFlash: {fileID: 198755046364822712}
+--- !u!114 &114259754074973954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712977108545004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4777636755479590}
+  m_ChildIndex: 1
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114286109427780904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -578,7 +600,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf61f1ec3e6b2743a4b62a56567d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleDuration: 4
+  particleDuration: 10
+--- !u!114 &114323664214864962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712977108545004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4216081038572104}
+  m_ChildIndex: 0
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114499941538541482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -590,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf61f1ec3e6b2743a4b62a56567d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleDuration: 5.5
+  particleDuration: 10
 --- !u!114 &114680061187456028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -623,7 +664,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf61f1ec3e6b2743a4b62a56567d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleDuration: 2.5
+  particleDuration: 10
+--- !u!114 &114882966602038074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712977108545004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4412813542711832}
+  m_ChildIndex: 2
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!198 &198066853497073290
 ParticleSystem:
   m_ObjectHideFlags: 1
