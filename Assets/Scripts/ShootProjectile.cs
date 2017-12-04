@@ -9,6 +9,7 @@ public class ShootProjectile : NetworkBehaviour
     public float reloadTime;
     public GameObject shellPrefab;
     public Transform startingLocation;
+	public AudioSource firingSource;
 
     private float reloadTimer;
 
@@ -29,6 +30,7 @@ public class ShootProjectile : NetworkBehaviour
         if (reloadTimer >= reloadTime && Input.GetMouseButtonDown(0))
         {
             CmdFire();
+			firingSource.Play ();
             reloadTimer = 0;
         }
     }
