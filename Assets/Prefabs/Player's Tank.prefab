@@ -527,8 +527,6 @@ GameObject:
   - component: {fileID: 4995169346775538}
   - component: {fileID: 54796369354985852}
   - component: {fileID: 114507225151743686}
-  - component: {fileID: 114546240288380916}
-  - component: {fileID: 114702311392861744}
   m_Layer: 0
   m_Name: PzKpfw. IV Ausf J
   m_TagString: Player
@@ -914,7 +912,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845740102672712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 38, z: -6}
+  m_LocalPosition: {x: 0, y: 49.2, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4995169346775538}
@@ -2055,8 +2053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3401a9f921a544dab46e31945f9376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noHitCrossHair: {fileID: 2800000, guid: ca011601337cc6444a89f0060d5c769b, type: 3}
-  hitCrossHair: {fileID: 2800000, guid: cc6ebf579c7ce464f96654d057857c1a, type: 3}
+  noHitCrossHair: {fileID: 2800000, guid: 98fe0a4e72f384da9a675dfc1b241722, type: 3}
+  hitCrossHair: {fileID: 2800000, guid: e4679580128ed4a8fbcc96a785bcc04a, type: 3}
   cameraController: {fileID: 114342580427743278}
   size: 55
   distance: 250
@@ -2096,7 +2094,7 @@ MonoBehaviour:
     - {fileID: 146832169037166716}
     - {fileID: 146141707013508114}
     - {fileID: 146101800672351500}
-  forwardMotorTorque: 40000
+  forwardMotorTorque: 30000
   reverseMotorTorque: -20000
   brakeTorque: 60000
 --- !u!114 &114136618618406140
@@ -2242,38 +2240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivotGun: {fileID: 114140322761857266}
   pivotTurret: {fileID: 114846498603634004}
---- !u!114 &114546240288380916
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1672980107097184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 116
-    i1: 25
-    i2: 76
-    i3: 49
-    i4: 191
-    i5: 87
-    i6: 102
-    i7: 20
-    i8: 25
-    i9: 111
-    i10: 207
-    i11: 42
-    i12: 2
-    i13: 9
-    i14: 226
-    i15: 211
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114637916841097642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2312,27 +2278,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114702311392861744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1672980107097184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
-  m_SendInterval: 0.05
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114714813689522990
 MonoBehaviour:
   m_ObjectHideFlags: 1
