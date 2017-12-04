@@ -8,7 +8,7 @@ public class Health : NetworkBehaviour
 
     public float maxHealth;
     private Rect healthBarLocation = new Rect(10, Screen.height - 30, 200, 200);
-    public ParticleSystem deathEffect;
+    public GameObject deathEffect;
 
     [SyncVar]
     private float currentHealth;
@@ -16,7 +16,7 @@ public class Health : NetworkBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        deathEffect.Stop();
+        deathEffect.SetActive(false);
     }
 
     void OnGUI()
@@ -39,7 +39,8 @@ public class Health : NetworkBehaviour
 
     public void Death()
     {
-        deathEffect.Play();
+        deathEffect.SetActive(true);
+        deathEffect.GetComponent<ParticleSystem>().Play();
         this.GetComponent<DrawCrosshairs>().enabled = false;
         this.GetComponent<TurretController>().enabled = false;
         this.GetComponent<MoveScript>().enabled = false;

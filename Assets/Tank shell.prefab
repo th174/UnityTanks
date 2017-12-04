@@ -563,7 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 5
   muzzleForce: 150000
-  baseDamage: 150
+  baseDamage: 100
   smokeEffect: {fileID: 198191085325983932}
   explosionEffect: {fileID: 198915309884202008}
   muzzleFlash: {fileID: 198755046364822712}

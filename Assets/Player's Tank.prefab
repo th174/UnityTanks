@@ -53,8 +53,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4547729025333170}
   - component: {fileID: 114140322761857266}
-  - component: {fileID: 114528792721599462}
-  - component: {fileID: 114171846142280598}
   m_Layer: 0
   m_Name: GunPivot
   m_TagString: Untagged
@@ -375,8 +373,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4521549694654302}
   - component: {fileID: 114846498603634004}
-  - component: {fileID: 114668400000736404}
-  - component: {fileID: 114399224690881166}
   m_Layer: 0
   m_Name: TurretPivot
   m_TagString: Untagged
@@ -799,7 +795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1921361635031048
 GameObject:
   m_ObjectHideFlags: 1
@@ -1937,7 +1933,7 @@ Rigidbody:
   m_GameObject: {fileID: 1672980107097184}
   serializedVersion: 2
   m_Mass: 40000
-  m_Drag: 0.15
+  m_Drag: 0.4
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2026,7 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  deathEffect: {fileID: 198134610017910042}
+  deathEffect: {fileID: 1896567207953346}
 --- !u!114 &114062452501351558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2100,9 +2096,9 @@ MonoBehaviour:
     - {fileID: 146832169037166716}
     - {fileID: 146141707013508114}
     - {fileID: 146101800672351500}
-  forwardMotorTorque: 20000
-  reverseMotorTorque: -10000
-  brakeTorque: 10000
+  forwardMotorTorque: 40000
+  reverseMotorTorque: -20000
+  brakeTorque: 60000
 --- !u!114 &114136618618406140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2169,27 +2165,6 @@ MonoBehaviour:
   minimumY: -60
   maximumY: 60
   frameCounter: 3
---- !u!114 &114171846142280598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1103219077648322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.05
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114342580427743278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2223,27 +2198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   externalPosition: {fileID: 4535903813626438}
   mouseLook: {fileID: 114958311452469560}
---- !u!114 &114399224690881166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1486176085793994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.05
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114478564470637232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2275,38 +2229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   com: {fileID: 4044151247713106}
---- !u!114 &114528792721599462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1103219077648322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 116
-    i1: 25
-    i2: 76
-    i3: 49
-    i4: 191
-    i5: 87
-    i6: 102
-    i7: 20
-    i8: 25
-    i9: 111
-    i10: 207
-    i11: 42
-    i12: 2
-    i13: 9
-    i14: 226
-    i15: 211
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114535670801140984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2371,38 +2293,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114668400000736404
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1486176085793994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 116
-    i1: 25
-    i2: 76
-    i3: 49
-    i4: 191
-    i5: 87
-    i6: 102
-    i7: 20
-    i8: 25
-    i9: 111
-    i10: 207
-    i11: 42
-    i12: 2
-    i13: 9
-    i14: 226
-    i15: 211
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114683135299270342
 MonoBehaviour:
   m_ObjectHideFlags: 1

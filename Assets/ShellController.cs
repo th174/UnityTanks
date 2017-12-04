@@ -48,6 +48,6 @@ public class ShellController : MonoBehaviour
 
     float GetDamage()
     {
-        return baseDamage * Mathf.Pow(this.GetComponent<Rigidbody>().velocity.magnitude / initialSpeed, 1.5f);
+        return baseDamage * Mathf.Pow(this.GetComponent<Rigidbody>().velocity.magnitude / initialSpeed, 2);
     }
 }
