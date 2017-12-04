@@ -6,13 +6,16 @@ using UnityEngine.Networking;
 
 public class ShootProjectile : NetworkBehaviour
 {
+    public float reloadTime;
     public GameObject shellPrefab;
     public Transform startingLocation;
+
+    private float reloadTimer;
 
     // Use this for initialization
     void Start()
     {
-
+        reloadTimer = reloadTime;
     }
 
     // Update is called once per frame
@@ -22,9 +25,11 @@ public class ShootProjectile : NetworkBehaviour
         {
             return;
         }
-        if (Input.GetMouseButtonDown(0))
+        reloadTimer += Time.deltaTime;
+        if (reloadTimer >= reloadTime && Input.GetMouseButtonDown(0))
         {
             CmdFire();
+            reloadTimer = 0;
         }
     }
 

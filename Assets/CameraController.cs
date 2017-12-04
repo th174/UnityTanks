@@ -33,6 +33,7 @@ public class CameraController : NetworkBehaviour
         if (isLocalPlayer)
         {
             CurrentCameraComponent.enabled = true;
+            CurrentMouseLookComponent.ResetRotation(baseRotation.rotation);
         }
     }
 

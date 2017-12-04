@@ -1,0 +1,48 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class Health : NetworkBehaviour
+{
+
+    public float maxHealth;
+    private Rect healthBarLocation = new Rect(10, Screen.height - 30, 200, 200);
+    public ParticleSystem deathEffect;
+
+    [SyncVar]
+    private float currentHealth;
+    // Use this for initialization
+    void Start()
+    {
+        currentHealth = maxHealth;
+        deathEffect.Stop();
+    }
+
+    void OnGUI()
+    {
+        if (isLocalPlayer)
+        {
+            GUI.Label(healthBarLocation, string.Format("Hull integrity:{0}%", currentHealth));
+        }
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            this.Death();
+        }
+    }
+
+    public void Death()
+    {
+        deathEffect.Play();
+        this.GetComponent<DrawCrosshairs>().enabled = false;
+        this.GetComponent<TurretController>().enabled = false;
+        this.GetComponent<MoveScript>().enabled = false;
+        this.GetComponent<ShootProjectile>().enabled = false;
+    }
+}
