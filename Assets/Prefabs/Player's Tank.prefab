@@ -463,6 +463,7 @@ GameObject:
   - component: {fileID: 114848317835059168}
   - component: {fileID: 114637916841097642}
   - component: {fileID: 114011233706154548}
+  - component: {fileID: 81376655406515278}
   m_Layer: 0
   m_Name: Player's Tank
   m_TagString: Untagged
@@ -1994,6 +1995,13 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 997c61412ec5e1c49ab75d6b25ec63b3, type: 3}
+--- !u!81 &81376655406515278
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581871405990442}
+  m_Enabled: 1
 --- !u!92 &92452222523259574
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2338,6 +2346,8 @@ MonoBehaviour:
   shellPrefab: {fileID: 1712977108545004, guid: 51399cbff4bb24c4f96642ba35b8c157,
     type: 2}
   startingLocation: {fileID: 4043307300346782}
+  firingSource: {fileID: 82509796510677574, guid: cc74bc76c61e64a76952bd06df00eb39,
+    type: 2}
 --- !u!114 &114958311452469560
 MonoBehaviour:
   m_ObjectHideFlags: 1
