@@ -44,6 +44,7 @@ public class ShellController : MonoBehaviour
         var emissions = smokeEffect.emission;
         emissions.enabled = false;
         explosionEffect.transform.parent = null;
+		Debug.Log ("Collided!");
         explosionEffect.Play ();
         Destroy(this.gameObject);
     }

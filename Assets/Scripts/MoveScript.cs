@@ -29,11 +29,11 @@ public class MoveScript : NetworkBehaviour
 		leftBrake = !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.A) ? brakeTorque : 0; 
         rightBrake = !Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.D) ? brakeTorque : 0; 
 		if (Input.GetKey (KeyCode.Q) || Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.D)) {
-			Debug.Log ("MOVING");
+			// Debug.Log ("MOVING");
 			movementSource.enabled = true;
 			movementSource.loop = true;
 		} else {
-			Debug.Log ("STILL");
+			// Debug.Log ("STILL");
 			movementSource.enabled = false;
 			movementSource.loop = false;
 		}

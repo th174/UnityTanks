@@ -30,11 +30,8 @@ public class ShootProjectile : NetworkBehaviour
         if (reloadTimer >= reloadTime && Input.GetMouseButtonDown(0))
         {
             CmdFire();
-			Debug.Log("Trying to play sound!");
+
 			firingSource.Play ();
-			if (!firingSource.isPlaying) {
-				Debug.Log ("Not playing sound");
-			}
             reloadTimer = 0;
         }
     }
