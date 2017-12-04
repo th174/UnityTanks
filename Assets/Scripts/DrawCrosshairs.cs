@@ -17,11 +17,14 @@ public class DrawCrosshairs : NetworkBehaviour
 
     void OnGUI()
     {
-        GUI.DrawTexture(new Rect(0, 0, size, size)
+        if (isLocalPlayer)
         {
-            center = new Vector2(coordinates.x, cameraController.CurrentCameraComponent.pixelHeight - coordinates.y)
-        }, 
-        crosshairSprite);
+            GUI.DrawTexture(new Rect(0, 0, size, size)
+            {
+                center = new Vector2(coordinates.x, cameraController.CurrentCameraComponent.pixelHeight - coordinates.y)
+            },
+            crosshairSprite);
+        }
     }
 
     void Update()
