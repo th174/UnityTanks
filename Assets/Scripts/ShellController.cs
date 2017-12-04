@@ -12,6 +12,8 @@ public class ShellController : MonoBehaviour
     public ParticleSystem explosionEffect;
     public ParticleSystem muzzleFlash;
 
+	public AudioSource explosionSource;
+
     private float initialSpeed = -1;
     // Use this for initialization
     void Start()
@@ -42,7 +44,7 @@ public class ShellController : MonoBehaviour
         var emissions = smokeEffect.emission;
         emissions.enabled = false;
         explosionEffect.transform.parent = null;
-        explosionEffect.Play();
+        explosionEffect.Play ();
         Destroy(this.gameObject);
     }
 
