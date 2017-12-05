@@ -9,12 +9,6 @@ public class GameController : NetworkBehaviour
     private int deadPlayers;
     private float timeElapsed;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
