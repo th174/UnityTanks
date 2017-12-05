@@ -23,7 +23,10 @@ public class PlayerController : NetworkBehaviour
     void Start()
     {
         deathEffect.SetActive(false);
-        PlayerController.connectedPlayers++;
+        if (isServer)
+        {
+            PlayerController.connectedPlayers++;
+        }
         if (isLocalPlayer)
         {
             this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
@@ -41,23 +44,26 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-        if (!isLocalPlayer)
+        if (isServer)
         {
-            return;
+            var players = FindObjectsOfType<PlayerController>();
+            var remainingPlayers = 0;
+            foreach (var player in players)
+            {
+                remainingPlayers += player.isDead ? 0 : 1;
+            }
+            if (connectedPlayers > remainingPlayers && remainingPlayers <= 1)
+            {
+                Array.ForEach<PlayerController>(players, p => p.RpcEndGame());
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Backslash))
+        if (isLocalPlayer)
         {
-            CmdForceDeath();
-        }
-        var players = FindObjectsOfType<PlayerController>();
-        var remainingPlayers = 0;
-        foreach (var player in players)
-        {
-            remainingPlayers += player.isDead ? 0 : 1;
-        }
-        if (connectedPlayers > remainingPlayers && remainingPlayers <= 1)
-        {
-            Array.ForEach<PlayerController>(players, p => p.RpcEndGame());
+
+            if (Input.GetKeyDown(KeyCode.Backslash))
+            {
+                CmdForceDeath();
+            }
         }
     }
 
@@ -149,6 +155,8 @@ public class PlayerController : NetworkBehaviour
 
     void Exit()
     {
+        PlayerController.connectedPlayers = 0;
+        PlayerController.rematchVote = 0;
         NetworkManager.singleton.StopHost();
         NetworkServer.Shutdown();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
