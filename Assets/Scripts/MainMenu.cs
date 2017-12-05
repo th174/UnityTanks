@@ -12,10 +12,11 @@ public class MainMenu : MonoBehaviour
         SceneParameters.isHost = true;
     }
 
-    public void JoinGame()
+    public void JoinGame(TMPro.TextMeshProUGUI text)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneParameters.isHost = false;
+        SceneParameters.serverHostName = text.text ;
     }
 
     public void OpenOptionMenu()
