@@ -23,6 +23,27 @@ Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Manag
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  1.192 seconds
+- Completed reload, in  0.019 seconds
 <RI> Initializing input.
 <RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.924345 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 3108 -> priority: 1 
+  Thread -> id: 4ca0 -> priority: 1 
+  Thread -> id: 2a9c -> priority: 1 
+  Thread -> id: 18a8 -> priority: 1 
+[Physics.PhysX] Cooking::cookConvexMesh: user-provided hull must have less than 256 vertices!
+ 
+(Filename: C:/buildslave/physx/build/Source/PhysXCooking/src/Cooking.cpp Line: 273)
+
+Failed to create Convex Mesh from source mesh "Projectile". Source mesh is likely have too many smooth surface regions. Please reduce the surface smoothness of the source mesh. Alternatively turn on Inflate Mesh and increase the Skin Width sufficiently for this mesh.
+ 
+(Filename:  Line: 54)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.230716 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 774.
+Total: 3.792197 ms (FindLiveObjects: 0.056098 ms CreateObjectMapping: 0.079407 ms MarkObjects: 0.369382 ms  DeleteObjects: 3.286913 ms)
+
