@@ -25,7 +25,7 @@ public class ShellController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (initialSpeed < 0)
         {
@@ -35,7 +35,7 @@ public class ShellController : MonoBehaviour
 
     void OnCollisionEnter(Collision hit)
     {
-        var health = hit.gameObject.GetComponentInParent<PlayerController>();
+        var health = hit.gameObject.GetComponentInParent<Health>();
         if (health != null)
         {
             health.TakeDamage(GetDamage());

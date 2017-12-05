@@ -26,7 +26,7 @@ public class MoveScript : NetworkBehaviour
         {
             return;
         }
-        GUI.Label(new Rect(Screen.width - 100, Screen.height - 30, 90, 20), string.Format("Speed: {0:F0}km/h", this.gameObject.GetComponentInChildren<Rigidbody>().velocity.magnitude * 3.6), speedLabelStyle);
+        GUI.Label(new Rect(Screen.width - 100, 10, 90, 20), string.Format("Speed: {0:F0}km/h", this.gameObject.GetComponentInChildren<Rigidbody>().velocity.magnitude * 3.6), speedLabelStyle);
     }
 
     public void Update()

@@ -1,34 +1,70 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : NetworkBehaviour
 {
 
-    public float maxHealth;
     public GameObject deathEffect;
     private string restartText = "Request Rematch";
     public GUIStyle gameOverLabelStyle;
-    public GUIStyle healthLabelStyle;
     public GUIStyle buttonTextStyle;
+    public short playerId;
 
     internal bool isDead;
     internal bool gameOver;
 
-    [SyncVar]
-    private float currentHealth;
-    [SyncVar]
-    private int rematchVote;
+    private static int rematchVote;
+    private static int connectedPlayers;
     // Use this for initialization
     void Start()
     {
-        currentHealth = maxHealth;
         deathEffect.SetActive(false);
+        PlayerController.connectedPlayers++;
         if (isLocalPlayer)
         {
             this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
+            playerId = this.GetComponent<NetworkIdentity>().playerControllerId;
         }
+    }
+
+    void OnDisconnectedFromServer(NetworkDisconnection info)
+    {
+        if (Network.isClient)
+        {
+            Exit();
+        }
+    }
+
+    void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Backslash))
+        {
+            CmdForceDeath();
+        }
+        var players = FindObjectsOfType<PlayerController>();
+        var remainingPlayers = 0;
+        foreach (var player in players)
+        {
+            remainingPlayers += player.isDead ? 0 : 1;
+        }
+        if (remainingPlayers <= 1 && connectedPlayers > 1)
+        {
+            Array.ForEach<PlayerController>(players, p => p.RpcEndGame());
+        }
+    }
+
+    [Command]
+    void CmdForceDeath()
+    {
+        RpcDeath();
     }
 
     void OnGUI()
@@ -37,18 +73,20 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-        GUI.Label(new Rect(10, Screen.height - 30, 200, 20), string.Format("Hull integrity: {0:F0}%", currentHealth), healthLabelStyle);
         if (gameOver)
         {
-            if(GUI.Button(new Rect(Screen.width / 2 - 100, 200, 200, 70), restartText))
+            Cursor.lockState = CursorLockMode.None;
+            if (GUI.Button(new Rect(Screen.width / 2 - 205, 200, 200, 70), restartText))
             {
-                restartText = "Rematch Requested...";
-                Destroy(this.gameObject);
-                rematchVote++;
-                if (rematchVote >= FindObjectsOfType<PlayerController>().Length)
+                if (!restartText.Contains("..."))
                 {
-                    Reset();
+                    CmdRestart();
                 }
+                restartText = "Rematch Requested...";
+            }
+            if (GUI.Button(new Rect(Screen.width / 2 + 5, 200, 200, 70), "Quit to Main Menu"))
+            {
+                Exit();
             }
         }
         if (isDead)
@@ -58,20 +96,6 @@ public class PlayerController : NetworkBehaviour
         if (gameOver && !isDead)
         {
             GUI.Label(new Rect(Screen.width / 2 - 200, 100, 400, 300), "Congratulations, you win!", gameOverLabelStyle);
-        }
-    }
-
-    public void TakeDamage(float amount)
-    {
-        if (!isServer)
-        {
-            return;
-        }
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            this.RpcDeath();
         }
     }
 
@@ -103,17 +127,30 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    void Reset()
+    [Command]
+    void CmdRestart()
     {
-        var myIsHost = this.isServer;
-        NetworkManager.singleton.StopHost();
-        NetworkServer.Reset();
-        if (myIsHost)
+        PlayerController.rematchVote++;
+        if (rematchVote >= FindObjectsOfType<PlayerController>().Length)
         {
-            NetworkManager.singleton.StartHost();
-        } else
-        {
-            NetworkManager.singleton.StartClient();
+            PlayerController.rematchVote = 0;
+            PlayerController.connectedPlayers = 0;
+            RpcRestart();
         }
+    }
+
+    [ClientRpc]
+    void RpcRestart()
+    {
+        ClientScene.RemovePlayer(playerId);
+        ClientScene.AddPlayer(playerId);
+    }
+
+
+    void Exit()
+    {
+        NetworkManager.singleton.StopHost();
+        NetworkServer.Shutdown();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
