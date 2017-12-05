@@ -21,7 +21,7 @@ public class TurretController : NetworkBehaviour
         {
             return;
         }
-        if (!Input.GetKey(KeyCode.C))
+		if (!Input.GetKey(KeyCode.Space))
         {
             pivotGun.Update();
             pivotTurret.Update();
