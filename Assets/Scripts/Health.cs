@@ -35,8 +35,12 @@ public class Health : NetworkBehaviour {
         }
     }
 
-    private void OnGUI()
+    void OnGUI()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         GUI.Label(new Rect(10, 10, 200, 20), string.Format("Hull integrity: {0:F0}%", currentHealth), healthLabelStyle);
     }
 }

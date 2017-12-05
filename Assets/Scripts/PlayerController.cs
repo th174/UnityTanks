@@ -55,7 +55,7 @@ public class PlayerController : NetworkBehaviour
         {
             remainingPlayers += player.isDead ? 0 : 1;
         }
-        if (remainingPlayers <= 1 && connectedPlayers > 1)
+        if (connectedPlayers > remainingPlayers && remainingPlayers <= 1)
         {
             Array.ForEach<PlayerController>(players, p => p.RpcEndGame());
         }
