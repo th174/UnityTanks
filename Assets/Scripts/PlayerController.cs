@@ -57,14 +57,6 @@ public class PlayerController : NetworkBehaviour
                 Array.ForEach<PlayerController>(players, p => p.RpcEndGame());
             }
         }
-        if (isLocalPlayer)
-        {
-
-            if (Input.GetKeyDown(KeyCode.Backslash))
-            {
-                CmdForceDeath();
-            }
-        }
     }
 
     [Command]

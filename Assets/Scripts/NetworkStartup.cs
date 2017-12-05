@@ -14,6 +14,7 @@ public class NetworkStartup : MonoBehaviour {
         }
         else
         {
+            NetworkManager.singleton.networkAddress = SceneParameters.serverHostName;
             NetworkManager.singleton.StartClient();
         }
     }
