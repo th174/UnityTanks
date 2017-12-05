@@ -25,6 +25,10 @@ public class PlayerController : NetworkBehaviour
     {
         currentHealth = maxHealth;
         deathEffect.SetActive(false);
+        if (isLocalPlayer)
+        {
+            this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
+        }
     }
 
     void OnGUI()
