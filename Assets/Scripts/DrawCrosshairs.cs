@@ -15,6 +15,11 @@ public class DrawCrosshairs : NetworkBehaviour
     Vector2 coordinates;
     RaycastHit hit;
 
+    private void Start()
+    {
+        crosshairSprite = noHitCrossHair;
+    }
+
     void OnGUI()
     {
         if (isLocalPlayer)

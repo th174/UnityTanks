@@ -30,7 +30,6 @@ public class ShootProjectile : NetworkBehaviour
         if (reloadTimer >= reloadTime && Input.GetMouseButtonDown(0))
         {
             CmdFire();
-
 			firingSource.Play ();
             reloadTimer = 0;
         }

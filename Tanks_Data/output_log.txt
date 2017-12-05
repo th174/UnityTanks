@@ -19,9 +19,11 @@ Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Manag
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.079 seconds
+- Completed reload, in  0.198 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
@@ -33,12 +35,12 @@ Failed to create Convex Mesh from source mesh "Projectile". Source mesh is likel
  
 (Filename:  Line: 54)
 
-UnloadTime: 1.330962 ms
+UnloadTime: 1.032296 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 8f0 -> priority: 1 
-  Thread -> id: 4828 -> priority: 1 
-  Thread -> id: 4680 -> priority: 1 
-  Thread -> id: 4820 -> priority: 1 
+  Thread -> id: 43b0 -> priority: 1 
+  Thread -> id: 4600 -> priority: 1 
+  Thread -> id: 3848 -> priority: 1 
+  Thread -> id: 227c -> priority: 1 
 Initialize engine version: 2017.1.0f3 (472613c02cf7)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -60,15 +62,13 @@ Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Manag
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.022 seconds
+- Completed reload, in  0.020 seconds
 <RI> Initializing input.
 <RI> Input initialized.
-null texture passed to GUI.DrawTexture
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 <RI> Initialized touch support.
 [Physics.PhysX] Cooking::cookConvexMesh: user-provided hull must have less than 256 vertices!
  
@@ -78,18 +78,35 @@ Failed to create Convex Mesh from source mesh "Projectile". Source mesh is likel
  
 (Filename:  Line: 54)
 
-UnloadTime: 0.984098 ms
+UnloadTime: 1.107753 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 3850 -> priority: 1 
-  Thread -> id: 450 -> priority: 1 
-  Thread -> id: 4ae4 -> priority: 1 
-  Thread -> id: 3014 -> priority: 1 
+  Thread -> id: 720 -> priority: 1 
+  Thread -> id: 2444 -> priority: 1 
+  Thread -> id: 2bc0 -> priority: 1 
+  Thread -> id: 2958 -> priority: 1 
 null texture passed to GUI.DrawTexture
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {223323}, last rec time {220829} rtt {11} timeout {2000}
+null texture passed to GUI.DrawTexture
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {247187}, last rec time {245185} rtt {3} timeout {2000}
 ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+null texture passed to GUI.DrawTexture
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+null texture passed to GUI.DrawTexture
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55985} time {594899}, last rec time {592794} rtt {12} timeout {2000}
+ServerDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 

@@ -7,15 +7,19 @@ public class PlayerController : NetworkBehaviour
 {
 
     public float maxHealth;
-    private Rect healthBarLocation = new Rect(10, Screen.height - 30, 200, 200);
     public GameObject deathEffect;
-    public GameController game;
+    private string restartText = "Request Rematch";
+    public GUIStyle gameOverLabelStyle;
+    public GUIStyle healthLabelStyle;
+    public GUIStyle buttonTextStyle;
 
     internal bool isDead;
     internal bool gameOver;
 
     [SyncVar]
     private float currentHealth;
+    [SyncVar]
+    private int rematchVote;
     // Use this for initialization
     void Start()
     {
@@ -29,18 +33,27 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-        GUI.Label(healthBarLocation, string.Format("Hull integrity:{0}%", currentHealth));
+        GUI.Label(new Rect(10, Screen.height - 30, 200, 20), string.Format("Hull integrity: {0:F0}%", currentHealth), healthLabelStyle);
         if (gameOver)
         {
-            GUI.Button(new Rect(Screen.width / 2 - 200, 300, 400, 300), "Restart?");
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, 200, 200, 70), restartText))
+            {
+                restartText = "Rematch Requested...";
+                Destroy(this.gameObject);
+                rematchVote++;
+                if (rematchVote >= FindObjectsOfType<PlayerController>().Length)
+                {
+                    Reset();
+                }
+            }
         }
         if (isDead)
         {
-            GUI.Label(new Rect(Screen.width / 2 - 200, 0, 400, 300), "Game Over");
+            GUI.Label(new Rect(Screen.width / 2 - 200, 50, 400, 300), "Game Over", gameOverLabelStyle);
         }
         if (gameOver && !isDead)
         {
-            GUI.Label(new Rect(Screen.width / 2 - 200, 0, 400, 300), "Congratulations, you win!");
+            GUI.Label(new Rect(Screen.width / 2 - 200, 100, 400, 300), "Congratulations, you win!", gameOverLabelStyle);
         }
     }
 
@@ -83,6 +96,20 @@ public class PlayerController : NetworkBehaviour
             this.GetComponent<TurretController>().enabled = false;
             this.GetComponent<MoveScript>().enabled = false;
             this.GetComponent<ShootProjectile>().enabled = false;
+        }
+    }
+
+    void Reset()
+    {
+        var myIsHost = this.isServer;
+        NetworkManager.singleton.StopHost();
+        NetworkServer.Reset();
+        if (myIsHost)
+        {
+            NetworkManager.singleton.StartHost();
+        } else
+        {
+            NetworkManager.singleton.StartClient();
         }
     }
 }

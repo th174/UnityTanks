@@ -34,6 +34,5 @@ public class GameController : NetworkBehaviour
         {
             Array.ForEach<PlayerController>(players, p => p.RpcEndGame());
         }
-        //Debug.Log(players.Length);
     }
 }
