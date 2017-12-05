@@ -17,7 +17,7 @@ public class ShellController : MonoBehaviour
     void Start()
     {
         this.GetComponent<Rigidbody>().AddForce(this.transform.forward * muzzleForce);
-        explosionEffect.Stop();
+        explosionEffect.Stop(withChildren:true, stopBehavior:ParticleSystemStopBehavior.StopEmittingAndClear);
         muzzleFlash.transform.parent = null;
         Destroy(this.gameObject, duration);
     }
@@ -42,12 +42,12 @@ public class ShellController : MonoBehaviour
         var emissions = smokeEffect.emission;
         emissions.enabled = false;
         explosionEffect.transform.parent = null;
-        explosionEffect.Play();
+        explosionEffect.Play(withChildren:true);
         Destroy(this.gameObject);
     }
 
     float GetDamage()
     {
-        return baseDamage * Mathf.Pow(this.GetComponent<Rigidbody>().velocity.magnitude / initialSpeed, 2);
+        return baseDamage * Mathf.Pow(this.GetComponent<Rigidbody>().velocity.magnitude / initialSpeed, 1);
     }
 }

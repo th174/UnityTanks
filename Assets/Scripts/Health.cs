@@ -29,21 +29,29 @@ public class Health : NetworkBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (!isServer)
+        {
+            return;
+        }
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            this.Death();
+            this.RpcDeath();
         }
     }
 
-    public void Death()
+    [ClientRpc]
+    public void RpcDeath()
     {
         deathEffect.SetActive(true);
         deathEffect.GetComponent<ParticleSystem>().Play();
-        this.GetComponent<DrawCrosshairs>().enabled = false;
-        this.GetComponent<TurretController>().enabled = false;
-        this.GetComponent<MoveScript>().enabled = false;
-        this.GetComponent<ShootProjectile>().enabled = false;
+        if (isLocalPlayer)
+        {
+            this.GetComponent<DrawCrosshairs>().enabled = false;
+            this.GetComponent<TurretController>().enabled = false;
+            this.GetComponent<MoveScript>().enabled = false;
+            this.GetComponent<ShootProjectile>().enabled = false;
+        }
     }
 }

@@ -38,6 +38,18 @@ public class ShootProjectile : NetworkBehaviour
     [Command]
     void CmdFire()
     {
-        NetworkServer.Spawn(Instantiate(shellPrefab, startingLocation.position, startingLocation.rotation));
+        //NetworkServer.Spawn(Instantiate(shellPrefab, startingLocation.position, startingLocation.rotation));
+        Instantiate(shellPrefab, startingLocation.position, startingLocation.rotation);
+        RpcFire();
     }
-}
+
+    [ClientRpc]
+    void RpcFire()
+    {
+        if (isServer)
+        {
+            return;
+        }
+        Instantiate(shellPrefab, startingLocation.position, startingLocation.rotation);
+    }
+} 
