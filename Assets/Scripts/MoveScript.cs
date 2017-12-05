@@ -16,6 +16,8 @@ public class MoveScript : NetworkBehaviour
     private float leftBrake;
     private float rightBrake;
 
+	public AudioSource movementSource;
+
     public void Update()
     {
         if (!isLocalPlayer)
@@ -24,8 +26,13 @@ public class MoveScript : NetworkBehaviour
         }
         leftTorque = Input.GetKey(KeyCode.Q) ? forwardMotorTorque : Input.GetKey(KeyCode.A) ? reverseMotorTorque : 0;
         rightTorque = Input.GetKey(KeyCode.E) ? forwardMotorTorque : Input.GetKey(KeyCode.D) ? reverseMotorTorque : 0;
-        leftBrake = !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.A) ? brakeTorque : 0; 
+		leftBrake = !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.A) ? brakeTorque : 0; 
         rightBrake = !Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.D) ? brakeTorque : 0; 
+		if (Input.GetKey (KeyCode.Q) || Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.D)) {
+            movementSource.volume = 1;
+		} else {
+            movementSource.volume = 0;
+		} 
     }
 
     public void FixedUpdate()

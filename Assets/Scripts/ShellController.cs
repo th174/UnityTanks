@@ -12,6 +12,8 @@ public class ShellController : MonoBehaviour
     public ParticleSystem explosionEffect;
     public ParticleSystem muzzleFlash;
 
+	public AudioSource explosionSource;
+
     private float initialSpeed = -1;
     // Use this for initialization
     void Start()
@@ -33,7 +35,7 @@ public class ShellController : MonoBehaviour
 
     void OnCollisionEnter(Collision hit)
     {
-        var health = hit.gameObject.GetComponentInParent<Health>();
+        var health = hit.gameObject.GetComponentInParent<PlayerController>();
         if (health != null)
         {
             health.TakeDamage(GetDamage());
@@ -43,11 +45,12 @@ public class ShellController : MonoBehaviour
         emissions.enabled = false;
         explosionEffect.transform.parent = null;
         explosionEffect.Play(withChildren:true);
+        explosionEffect.Play();
         Destroy(this.gameObject);
     }
 
     float GetDamage()
     {
-        return baseDamage * Mathf.Pow(this.GetComponent<Rigidbody>().velocity.magnitude / initialSpeed, 1);
+        return baseDamage * Mathf.Pow(this.GetComponent<Rigidbody>().velocity.magnitude / initialSpeed, 2);
     }
 }

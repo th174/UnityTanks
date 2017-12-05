@@ -13,8 +13,6 @@ public class SoundManager : MonoBehaviour {
 	void Update () {
 		if (!GetComponent<AudioSource> ().isPlaying) {
 			GetComponent<AudioSource> ().Play ();
-		} else {
-			Debug.Log ("Something is wrong with music");
 		}
 	}
 }

@@ -21,6 +21,75 @@ Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Manag
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.262 seconds
+- Completed reload, in  0.079 seconds
 <RI> Initializing input.
 <RI> Input initialized.
+<RI> Initialized touch support.
+[Physics.PhysX] Cooking::cookConvexMesh: user-provided hull must have less than 256 vertices!
+ 
+(Filename: C:/buildslave/physx/build/Source/PhysXCooking/src/Cooking.cpp Line: 273)
+
+Failed to create Convex Mesh from source mesh "Projectile". Source mesh is likely have too many smooth surface regions. Please reduce the surface smoothness of the source mesh. Alternatively turn on Inflate Mesh and increase the Skin Width sufficiently for this mesh.
+ 
+(Filename:  Line: 54)
+
+UnloadTime: 1.330962 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 8f0 -> priority: 1 
+  Thread -> id: 4828 -> priority: 1 
+  Thread -> id: 4680 -> priority: 1 
+  Thread -> id: 4820 -> priority: 1 
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
+    Vendor:   NVIDIA
+    VRAM:     6046 MB
+    Driver:   22.21.13.8541
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.022 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+null texture passed to GUI.DrawTexture
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+<RI> Initialized touch support.
+[Physics.PhysX] Cooking::cookConvexMesh: user-provided hull must have less than 256 vertices!
+ 
+(Filename: C:/buildslave/physx/build/Source/PhysXCooking/src/Cooking.cpp Line: 273)
+
+Failed to create Convex Mesh from source mesh "Projectile". Source mesh is likely have too many smooth surface regions. Please reduce the surface smoothness of the source mesh. Alternatively turn on Inflate Mesh and increase the Skin Width sufficiently for this mesh.
+ 
+(Filename:  Line: 54)
+
+UnloadTime: 0.984098 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 3850 -> priority: 1 
+  Thread -> id: 450 -> priority: 1 
+  Thread -> id: 4ae4 -> priority: 1 
+  Thread -> id: 3014 -> priority: 1 
+null texture passed to GUI.DrawTexture
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {223323}, last rec time {220829} rtt {11} timeout {2000}
+ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
