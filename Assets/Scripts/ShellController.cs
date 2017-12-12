@@ -25,9 +25,9 @@ public class ShellController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (initialSpeed < 0)
+        if (initialSpeed <= 0)
         {
             initialSpeed = this.GetComponent<Rigidbody>().velocity.magnitude;
         }

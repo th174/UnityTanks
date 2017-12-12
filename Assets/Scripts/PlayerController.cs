@@ -118,6 +118,9 @@ public class PlayerController : NetworkBehaviour
         gameOver = true;
         if (isLocalPlayer)
         {
+            this.GetComponent<MoveScript>().forwardMotorTorque = 0;
+            this.GetComponent<MoveScript>().reverseMotorTorque = 0;
+            this.GetComponent<MoveScript>().FixedUpdate();
             this.GetComponent<DrawCrosshairs>().enabled = false;
             this.GetComponent<TurretController>().enabled = false;
             this.GetComponent<MoveScript>().enabled = false;

@@ -23,16 +23,16 @@ Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Manag
 Loading D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\th174\Documents\projects\ISS320\TanksProj\Tanks_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.292 seconds
+- Completed reload, in  0.036 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.919604 ms
+UnloadTime: 2.556839 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 1b1c -> priority: 1 
-  Thread -> id: 4880 -> priority: 1 
-  Thread -> id: 2188 -> priority: 1 
-  Thread -> id: 3034 -> priority: 1 
+  Thread -> id: 30e8 -> priority: 1 
+  Thread -> id: 1bc4 -> priority: 1 
+  Thread -> id: 2598 -> priority: 1 
+  Thread -> id: 3c98 -> priority: 1 
 [Physics.PhysX] Cooking::cookConvexMesh: user-provided hull must have less than 256 vertices!
  
 (Filename: C:/buildslave/physx/build/Source/PhysXCooking/src/Cooking.cpp Line: 273)
@@ -42,8 +42,55 @@ Failed to create Convex Mesh from source mesh "Projectile". Source mesh is likel
 (Filename:  Line: 54)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.403654 ms
+UnloadTime: 7.751901 ms
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 777.
-Total: 4.568098 ms (FindLiveObjects: 0.086913 ms CreateObjectMapping: 0.067160 ms MarkObjects: 0.692543 ms  DeleteObjects: 3.720691 ms)
+Total: 4.091259 ms (FindLiveObjects: 0.079802 ms CreateObjectMapping: 0.024888 ms MarkObjects: 0.586666 ms  DeleteObjects: 3.399111 ms)
+
+77.71913
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+4.793153
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+47.29226
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+31.34282
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0.5608549
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+60.83807
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+43.92533
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+2.700591E+07
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+6130262
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:25.86.99.249:61900} time {730107}, last rec time {727610} rtt {11} timeout {2000}
+ServerDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.957135 ms
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 872.
+Total: 3.670518 ms (FindLiveObjects: 0.050962 ms CreateObjectMapping: 0.027259 ms MarkObjects: 0.975407 ms  DeleteObjects: 2.615703 ms)
 

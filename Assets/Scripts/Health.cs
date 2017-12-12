@@ -23,6 +23,7 @@ public class Health : NetworkBehaviour {
 
     public void TakeDamage(float amount)
     {
+        Debug.Log(amount);
         if (!isServer)
         {
             return;
